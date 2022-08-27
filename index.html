@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="asset/jquery/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="asset/bootstrap-5.2.0-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="fetchajs.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row p-3" id="container-div"></div>
+    </div>
+
+    <script src="asset/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+
+    <script src="fetchajs.min.js"></script>
+    <script>
+      let template = `<div class="card col-lg-3">
+        <div class="card-body">
+          <h5 class="card-title">{title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{subTitle}</h6>
+          <p class="card-text">{description}</p>
+          <a href="#" class="card-link">{link}</a>
+        </div>
+      </div>
+      `;
+
+      let data = [
+        {
+          title: "BALOOBA",
+          subTitle: "soniabyrd@balooba.com",
+          description:
+            "Dolor exercitation consectetur magna ea veniam elit incididunt excepteur. Irure aliqua consequat sunt in qui amet cillum. Exercitation deserunt in consequat laboris. Aliquip in id excepteur deserunt laborum occaecat laborum eu fugiat in. Non dolor qui eu sit sint cupidatat voluptate ullamco cillum ipsum nisi excepteur.\r\n",
+          link: false,
+        },
+        {
+          title: "IMPERIUM",
+          subTitle: "soniabyrd@imperium.com",
+          description:
+            "Consectetur veniam laboris qui ex ex exercitation eu voluptate veniam. Mollit minim consequat in laborum sunt aute sunt do in. Dolore aute deserunt cillum exercitation culpa minim consequat duis pariatur et proident quis in. Voluptate ad laboris sint officia ex deserunt. Tempor irure elit culpa proident.\r\n",
+          link: true,
+        },
+        {
+          title: "GEEKETRON",
+          subTitle: "soniabyrd@geeketron.com",
+          description:
+            "Fugiat id incididunt esse laborum aute amet sit mollit ad. Sunt minim nulla commodo ut fugiat est cillum pariatur aliqua culpa magna. Exercitation excepteur exercitation aliqua do aute nostrud do. Magna aute quis proident Lorem quis in tempor reprehenderit et nostrud. Officia sunt laboris tempor qui labore tempor deserunt voluptate eiusmod. Laborum ullamco cupidatat pariatur amet incididunt velit ea excepteur.\r\n",
+          link: false,
+        },
+        {
+          title: "HYPLEX",
+          subTitle: "soniabyrd@hyplex.com",
+          description:
+            "Reprehenderit ut eiusmod dolore sunt. Pariatur esse aute consequat cillum ad laborum non amet ad Lorem. Fugiat commodo laborum nostrud sit ut. Ipsum est tempor magna Lorem occaecat elit. Excepteur culpa cupidatat elit laboris nulla. Velit adipisicing commodo non dolor duis minim Lorem sit minim elit voluptate.\r\n",
+          link: true,
+        },
+        {
+          title: "SENTIA",
+          subTitle: "soniabyrd@sentia.com",
+          description:
+            "Non eu adipisicing tempor proident velit commodo elit dolor Lorem laboris non nisi adipisicing reprehenderit. Deserunt pariatur quis excepteur elit. Nostrud aliquip ut minim fugiat ex do anim amet ullamco proident.\r\n",
+          link: true,
+        },
+        {
+          title: "AEORA",
+          subTitle: "soniabyrd@aeora.com",
+          description:
+            "In ex cupidatat nulla laboris in. Eu amet excepteur amet laborum cupidatat pariatur anim eu elit irure velit. Laboris cupidatat ut aliqua est pariatur est deserunt fugiat esse eiusmod officia labore minim laborum. Ut enim eiusmod adipisicing mollit sunt veniam. Lorem qui officia veniam sint amet pariatur labore ea incididunt aliqua veniam. Voluptate ex quis nisi cupidatat aute et in consectetur nulla.\r\n",
+          link: false,
+        },
+        {
+          title: "CANDECOR",
+          subTitle: "soniabyrd@candecor.com",
+          description:
+            "Nostrud non in cillum magna. Mollit sit aliqua do incididunt sint consectetur nulla mollit deserunt incididunt eu officia eiusmod quis. Cillum magna culpa officia veniam esse non labore eu qui do ex proident tempor. Minim velit eiusmod in consectetur consequat enim enim. Ea deserunt exercitation pariatur proident dolor culpa qui reprehenderit sit in qui.\r\n",
+          link: false,
+        },
+        {
+          title: "UPDAT",
+          subTitle: "soniabyrd@updat.com",
+          description:
+            "Dolor consectetur magna sint do eiusmod consectetur qui enim nostrud consequat nulla. Pariatur nostrud sunt est magna id ea. Excepteur sit ad amet magna est sit sunt id laboris nostrud et ullamco. Labore laboris qui ex eiusmod magna deserunt eu nisi culpa ea minim laboris irure eu. Ea reprehenderit sint elit ex amet labore. Adipisicing irure elit commodo magna eu commodo. Eu ex et sint culpa esse dolore officia nisi eu reprehenderit duis.\r\n",
+          link: true,
+        },
+        {
+          title: "DANCITY",
+          subTitle: "soniabyrd@dancity.com",
+          description:
+            "Aliqua aute magna quis pariatur excepteur magna in dolore eu Lorem. Lorem laboris labore dolor amet in exercitation. Id non in labore magna incididunt do magna aute ex consequat. Aliqua irure labore ex voluptate voluptate et. Amet dolor dolore occaecat incididunt ullamco aliquip eiusmod. Consequat veniam nisi quis consequat.\r\n",
+          link: false,
+        },
+        {
+          title: "ENAUT",
+          subTitle: "soniabyrd@enaut.com",
+          description:
+            "Dolore dolore minim do irure. Laborum ullamco dolore elit cillum eiusmod sit duis. Esse ex aute ad culpa ipsum ullamco deserunt in exercitation et sint ut voluptate. Magna qui ad eu ullamco consequat reprehenderit ipsum anim aute labore. Pariatur id cupidatat id sint incididunt excepteur officia consectetur. Lorem irure laboris duis ipsum deserunt. Nisi sit nisi excepteur deserunt elit dolore ad laborum do.\r\n",
+          link: true,
+        },
+        {
+          title: "ACCRUEX",
+          subTitle: "soniabyrd@accruex.com",
+          description:
+            "Labore in ex adipisicing cillum veniam veniam mollit ea do. Aliqua est duis adipisicing ea. Nisi labore sint ut nostrud deserunt et voluptate quis incididunt aliquip ad quis. Do culpa eiusmod consequat consectetur esse eu consectetur elit ut elit nostrud excepteur deserunt. Cupidatat proident ea consectetur nisi officia ullamco magna.\r\n",
+          link: true,
+        },
+        {
+          title: "CONFERIA",
+          subTitle: "soniabyrd@conferia.com",
+          description:
+            "Sit ut ea consectetur proident amet tempor adipisicing eiusmod id. Velit est veniam cillum veniam. Do irure ad do sint laboris cupidatat laborum laboris officia sunt aliquip tempor esse cillum. Fugiat reprehenderit ullamco non et occaecat id eiusmod ipsum ut excepteur aute ea. Sunt Lorem fugiat est exercitation voluptate pariatur consectetur nisi tempor dolore.\r\n",
+          link: false,
+        },
+        {
+          title: "EVENTAGE",
+          subTitle: "soniabyrd@eventage.com",
+          description:
+            "Eu veniam commodo proident Lorem mollit fugiat velit excepteur incididunt. Excepteur laboris esse do ea laborum ullamco excepteur est sint Lorem nisi. Eiusmod consectetur aute et velit occaecat laboris irure enim nostrud.\r\n",
+          link: true,
+        },
+        {
+          title: "AVENETRO",
+          subTitle: "soniabyrd@avenetro.com",
+          description:
+            "Enim aliqua do velit dolore fugiat. Eu laboris eu et cupidatat pariatur non sunt pariatur anim. Velit reprehenderit minim velit enim exercitation sint amet. Proident ea cillum adipisicing elit laborum minim qui laboris irure exercitation proident Lorem dolor fugiat.\r\n",
+          link: true,
+        },
+        {
+          title: "SPLINX",
+          subTitle: "soniabyrd@splinx.com",
+          description:
+            "Quis cillum culpa velit eu laborum ad ullamco do occaecat amet. Deserunt consectetur elit tempor dolor incididunt tempor minim. Tempor ipsum labore eiusmod sit laboris incididunt voluptate enim ea esse nisi ut ullamco.\r\n",
+          link: true,
+        },
+        {
+          title: "CIRCUM",
+          subTitle: "soniabyrd@circum.com",
+          description:
+            "Est ut sit occaecat commodo aute in proident aute commodo ad nulla exercitation. Sint nostrud elit excepteur id consequat dolore ex dolore amet aliqua. Laborum duis reprehenderit mollit quis reprehenderit commodo eu cupidatat ut ad ut dolore. Consectetur cupidatat qui aute tempor ullamco incididunt labore deserunt anim do ad non. Officia exercitation aute qui dolore in. Proident duis culpa sit aliquip aliquip anim ipsum nulla amet aute ea.\r\n",
+          link: false,
+        },
+        {
+          title: "NETUR",
+          subTitle: "soniabyrd@netur.com",
+          description:
+            "Ipsum minim qui magna laborum duis excepteur ipsum proident. Non elit ex laboris velit nulla nostrud magna exercitation. Ipsum amet quis veniam qui anim reprehenderit eu.\r\n",
+          link: false,
+        },
+        {
+          title: "ENDICIL",
+          subTitle: "soniabyrd@endicil.com",
+          description:
+            "Irure do non ut proident. Mollit ut tempor aliquip culpa esse. Ex dolor commodo eiusmod ex laboris eiusmod anim et incididunt magna amet. Fugiat mollit veniam minim ut est. Est cupidatat non et aute eiusmod dolor culpa officia do deserunt.\r\n",
+          link: false,
+        },
+      ];
+
+      ///Mode online
+      let myConfig = {
+        mode: FetchaJS.MODE_SERVER,
+        template: template,
+        pagination: {
+          enable: true,
+          limit: 4,
+          current: 1,
+          buttonsCount: 6,
+          position: "bottom-center",
+          server: function (url, page, limit) {
+            return `${url}?page=${page}`;
+          },
+        },
+        server: {
+          url: "https://kidevs.xyz/testVideoChat/testapi.php",
+          method: "GET",
+          then: function (response) {
+            return response.data;
+          },
+          total: function (response) {
+            return response.total;
+          },
+        },
+      };
+
+      // Mode offline
+      // let myConfig = {
+      //   mode: FetchaJS.MODE_LOCAL,
+      //   data: data,
+      //   template: template,
+      //   pagination: {
+      //     enable: true,
+      //     limit: 8,
+      //     total: data.length,
+      //     current: 1,
+      //     buttonsCount: 6,
+      //     position: "top-right",
+      //   },
+      // };
+
+      let fetcha = new FetchaJS(myConfig).render("container-div");
+    </script>
+  </body>
+</html>

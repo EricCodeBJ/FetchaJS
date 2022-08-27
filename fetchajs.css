@@ -1,0 +1,77 @@
+.fetchajs--loading {
+    margin: 0 auto;
+    max-width: 200px;
+    min-height: 100px;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.fetchajs--pagination-block {
+    width: 100%;
+    padding: 15px 5px;
+}
+
+.fetchajs--pagination-button {
+    font-size: .8125rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+    min-width: calc(1rem + 1.125rem + 2px);
+    padding: .5625rem .625rem;
+    position: relative;
+    color: #526484;
+    background-color: #fff;
+    border: 1px solid #e5e9f2;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.fetchajs--pagination-button:focus {
+    z-index: 3;
+    color: #7a3fff;
+    background-color: #e9ecef;
+    outline: 0;
+    box-shadow: none;
+}
+
+.fetchajs--pagination-button:hover {
+    z-index: 2;
+    color: #7a3fff;
+    background-color: #ebeef2;
+    border-color: #e5e9f2;
+}
+
+.fetchajs--active {
+    background: #7a3fff;
+    color: white;
+}
+
+#fetchjs--loader {
+    display: block;
+    width: 100%;
+    text-align: -webkit-center;
+    padding: 15px 0px 0px 0px;
+    opacity: 0;
+}
+
+#fetchjs--loader > div {
+    width: 30px;
+    height: 30px;
+    border: 3px solid;
+    transition: .4s;
+    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-radius: 50%;
+    animation: fetchjs--spin--animation 1.2s linear infinite;
+}
+
+@keyframes fetchjs--spin--animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
